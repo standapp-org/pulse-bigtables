@@ -1,0 +1,30 @@
+{
+  "name": "standapp/pulse-bigtable",
+  "description": "A Laravel Pulse card to show big tables in database",
+  "type": "library",
+  "license": "MIT",
+  "version": "1.0.0",
+  "autoload": {
+    "psr-4": {
+      "Standapp\\PulseBigTable\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Standapp\\PulseBigTable\\PulseBigTableServiceProvider"
+      ]
+    }
+  },
+  "authors": [
+    {
+      "name": "Standapp"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=8.0",
+    "laravel/pulse": "1.*",
+    "ext-json": "*"
+  }
+}
