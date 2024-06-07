@@ -1,0 +1,25 @@
+providers:
+  - Livewire\LivewireServiceProvider
+  - Laravel\Pulse\PulseServiceProvider
+  - Standapp\PulseBigTable\BigTableServiceProvider
+  - Workbench\App\Providers\WorkbenchServiceProvider
+migrations:
+  - workbench/database/migrations
+
+seeders:
+  - Workbench\Database\Seeders\DatabaseSeeder
+
+workbench:
+  start: '/pulse'
+  install: true
+  health: false
+  discovers:
+    web: true
+    commands: false
+    views: true
+  build:
+    - asset-publish
+    - migrate-refresh
+  assets:
+    - laravel-assets
+  sync: [ ]

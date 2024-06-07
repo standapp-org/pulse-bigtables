@@ -9,10 +9,18 @@
       "Standapp\\PulseBigTable\\": "src/"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "Standapp\\PulseBigTable\\Tests\\": "tests/",
+      "Workbench\\App\\": "workbench/app/",
+      "Workbench\\Database\\Factories\\": "workbench/database/factories/",
+      "Workbench\\Database\\Seeders\\": "workbench/database/seeders/"
+    }
+  },
   "extra": {
     "laravel": {
       "providers": [
-        "Standapp\\PulseBigTable\\PulseBigTableServiceProvider"
+        "Standapp\\PulseBigTable\\BigTableServiceProvider"
       ]
     }
   },
@@ -26,5 +34,31 @@
     "php": ">=8.0",
     "laravel/pulse": "1.*",
     "ext-json": "*"
+  },
+  "require-dev": {
+    "mockery/mockery": "^1",
+    "phpunit/phpunit": "^10",
+    "orchestra/testbench": "^9.1"
+  },
+  "prefer-stable": true,
+  "scripts": {
+    "post-autoload-dump": [
+      "@clear",
+      "@prepare"
+    ],
+    "test": [
+      "@php vendor/bin/phpunit"
+    ],
+    "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
+    "prepare": "@php vendor/bin/testbench package:discover --ansi",
+    "build": "@php vendor/bin/testbench workbench:build --ansi",
+    "serve": [
+      "Composer\\Config::disableProcessTimeout",
+      "@build",
+      "@php vendor/bin/testbench serve"
+    ],
+    "lint": [
+      "@php vendor/bin/phpstan analyse"
+    ]
   }
 }
