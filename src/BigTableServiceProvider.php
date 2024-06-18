@@ -1,12 +1,12 @@
 <?php
 
-namespace Standapp\PulseBigTable;
+namespace StandApp\PulseBigTable;
 
 use Illuminate\Support\ServiceProvider;
 use Livewire\LivewireManager;
-use Standapp\PulseBigTable\Livewire\BigTable;
+use StandApp\PulseBigTable\Livewire\BigTable;
 
-class PulseBigTableServiceProvider extends ServiceProvider
+class BigTableServiceProvider extends ServiceProvider
 {
     /**
      * @return void

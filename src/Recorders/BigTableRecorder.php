@@ -1,6 +1,6 @@
 <?php
 
-namespace Standapp\PulseBigTable\Recorders;
+namespace StandApp\PulseBigTable\Recorders;
 
 use Illuminate\Config\Repository;
 use Illuminate\Support\Facades\DB;
@@ -21,9 +21,9 @@ class BigTableRecorder
      */
     public function record(SharedBeat $event): void
     {
-        if ($event->time !== $event->time->startOfDay()) {
-            return;
-        }
+//        if ($event->time !== $event->time->startOfDay()) {
+//            return;
+//        }
 
         $tables = DB::table('information_schema.TABLES')
             ->select(
