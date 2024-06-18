@@ -21,9 +21,7 @@ class BigTableRecorder
      */
     public function record(SharedBeat $event): void
     {
-//        if ($event->time !== $event->time->startOfDay()) {
-//            return;
-//        }
+        $limit = config('big-table.limit', 10);
 
         $tables = DB::table('information_schema.TABLES')
             ->select(
@@ -32,7 +30,7 @@ class BigTableRecorder
                 DB::raw('round(((data_length + index_length) / 1024 / 1024), 2) as `size_in_mb`'),
             )
             ->orderByRaw('(data_length + index_length) DESC')
-            ->limit(10)
+            ->limit($limit)
             ->get();
 
         $encoded = json_encode($tables);
