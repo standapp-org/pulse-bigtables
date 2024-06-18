@@ -1,6 +1,6 @@
 <?php
 
-namespace Standapp\PulseBigTable\Recorders;
+namespace StandApp\PulseBigTable\Recorders;
 
 use Illuminate\Config\Repository;
 use Illuminate\Support\Facades\DB;

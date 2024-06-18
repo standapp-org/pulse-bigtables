@@ -1,0 +1,24 @@
+providers:
+  - Livewire\LivewireServiceProvider
+  - Laravel\Pulse\PulseServiceProvider
+  - StandApp\PulseBigTable\BigTableServiceProvider
+  - Workbench\App\Providers\WorkbenchServiceProvider
+migrations:
+  - vendor/laravel/pulse/database/migrations/2023_06_07_000001_create_pulse_tables.php
+  - workbench/database/migrations
+
+seeders:
+  - Workbench\Database\Seeders\DatabaseSeeder
+
+workbench:
+  start: '/pulse'
+  install: true
+  health: false
+  discovers:
+    web: true
+    commands: false
+    views: true
+  build:
+    - asset-publish
+    - migrate-refresh
+  sync: [ ]

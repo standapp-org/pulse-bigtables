@@ -1,6 +1,6 @@
 <?php
 
-namespace Standapp\PulseBigTable\Livewire;
+namespace StandApp\PulseBigTable\Livewire;
 
 use Laravel\Pulse\Facades\Pulse;
 use Laravel\Pulse\Livewire\Card;
