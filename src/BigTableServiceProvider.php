@@ -16,11 +16,11 @@ class BigTableServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'big-table');
 
         $this->publishes([
-            __DIR__ . '/../config/big-table.php' => config_path('big-table.php'),
-        ], 'big-table');
+            __DIR__ . '/../config/pulse-bigtable.php' => config_path('pulse-bigtable.php'),
+        ], 'pulse-bigtable');
 
         $this->mergeConfigFrom(
-            __DIR__ . '/../config/big-table.php', 'big-table'
+            __DIR__ . '/../config/pulse-bigtable.php', 'pulse-bigtable'
         );
 
         $this->callAfterResolving('livewire', function (LivewireManager $livewire) {
