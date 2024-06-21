@@ -6,24 +6,24 @@ This card will show you big tables in your database.
 
 You can install the package via composer:
 
-```bash
+```shell
 composer require standapp/pulse-bigtable
 ```
 
 ### Publish the config file
 
-```bash
+```shell
 php artisan vendor:publish --tag=pulse-bigtable
 ```
 
 ### Register the recorder
 You must add the bigtable recorder to your `config/pulse.php` file:
 
-```diff
+```php
 return [
     // ...
     'recorders' => [
-    +     \StandApp\PulseBigTable\Recorders\BigTableRecorder::class => [],
+         \StandApp\PulseBigTable\Recorders\BigTableRecorder::class => [],
   ],
 ]
 ```
@@ -33,9 +33,10 @@ You must also run the `php artisan pulse:check` command.
 
 In your dashboard view, you can use the `bigtable` card type:
 
-```diff
+```php
 <x-pulse>
-   + <livewire:big-table cols='6' />
+    // ....
+    <livewire:big-table cols='6' />
 </x-pulse>
 ```
 
