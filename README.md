@@ -2,6 +2,9 @@
 
 This card will show you big tables in your database.
 
+<img width="648" alt="image" src="https://github.com/standapp-org/pulse-bigtables/assets/40002929/486300cd-6004-4811-9dee-87d654dff283">
+
+
 ### Installation
 
 You can install the package via composer:
